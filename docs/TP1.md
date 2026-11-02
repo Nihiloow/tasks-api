@@ -12,18 +12,18 @@ et vous savez lire un run GitHub Actions, y compris quand il échoue.
 
 ## Avant de commencer
 
-- [ ] Le script de vérification affiche « 0 en échec »
-- [ ] Vous avez créé **votre** dépôt `tasks-api` depuis le modèle et vous l'avez cloné
-- [ ] `pytest` est vert en local (10 tests réussis), dans l'environnement `.venv` activé
-- [ ] Vous êtes sur une branche `tp1` : `git switch -c tp1`
+- [x] Le script de vérification affiche « 0 en échec »
+- [x] Vous avez créé **votre** dépôt `tasks-api` depuis le modèle et vous l'avez cloné
+- [x] `pytest` est vert en local (10 tests réussis), dans l'environnement `.venv` activé
+- [x] Vous êtes sur une branche `tp1` : `git switch -c tp1`
 
 ### Les commandes qui changent selon votre système
 
-| Action | macOS | Linux | Windows (PowerShell) |
-|---|---|---|---|
-| Créer l'environnement | `python3.12 -m venv .venv` | `python3 -m venv .venv` | `py -3.12 -m venv .venv` |
-| L'activer | `source .venv/bin/activate` | `source .venv/bin/activate` | `.venv\Scripts\Activate.ps1` |
-| Appeler l'API | `curl http://localhost:8000/health` | `curl http://localhost:8000/health` | `curl.exe http://localhost:8000/health` |
+| Action                | macOS                               | Linux                               | Windows (PowerShell)                    |
+| --------------------- | ----------------------------------- | ----------------------------------- | --------------------------------------- |
+| Créer l'environnement | `python3.12 -m venv .venv`          | `python3 -m venv .venv`             | `py -3.12 -m venv .venv`                |
+| L'activer             | `source .venv/bin/activate`         | `source .venv/bin/activate`         | `.venv\Scripts\Activate.ps1`            |
+| Appeler l'API         | `curl http://localhost:8000/health` | `curl http://localhost:8000/health` | `curl.exe http://localhost:8000/health` |
 
 Tout le reste (`git`, `gh`, `pytest`, `pip`) est identique sur les trois systèmes.
 
@@ -48,9 +48,9 @@ puis recommencez le `git push`.
 1. Créez le fichier `.github/workflows/hello.yml` (le dossier existe déjà).
 2. Il doit se déclencher sur chaque `push`.
 3. Il contient un job `hello` qui tourne sur `ubuntu-latest` et affiche :
-   - un message de votre choix (`echo`) ;
-   - le nom de la branche (variable `github.ref_name`) ;
-   - l'auteur du commit (variable `github.actor`).
+    - un message de votre choix (`echo`) ;
+    - le nom de la branche (variable `github.ref_name`) ;
+    - l'auteur du commit (variable `github.actor`).
 4. Poussez, puis ouvrez l'onglet **Actions** de votre dépôt.
 
 > 📸 **TP1-1 :** le run « Hello » réussi, avec l'étape qui affiche la branche et l'auteur **dépliée**.
@@ -65,10 +65,10 @@ puis recommencez le `git push`.
 
 1. Créez `.github/workflows/ci.yml` avec un job `test`.
 2. Étapes attendues, dans l'ordre :
-   1. récupérer le code : action `actions/checkout@v6` ;
-   2. installer Python 3.12 : action `actions/setup-python@v7`, avec `python-version: "3.12"` ;
-   3. installer les dépendances : `pip install -r requirements-dev.txt` ;
-   4. lancer les tests : `pytest`.
+    1. récupérer le code : action `actions/checkout@v6` ;
+    2. installer Python 3.12 : action `actions/setup-python@v7`, avec `python-version: "3.12"` ;
+    3. installer les dépendances : `pip install -r requirements-dev.txt` ;
+    4. lancer les tests : `pytest`.
 3. Poussez et vérifiez que le run est vert.
 
 > 📸 **TP1-2 :** le run `ci.yml` réussi, avec la liste des étapes visible.
@@ -82,9 +82,9 @@ puis recommencez le `git push`.
 1. Dans `app/logic.py`, modifiez volontairement `MAX_TITLE_LENGTH` (par exemple 5).
 2. Poussez : le run doit devenir **rouge**.
 3. Dans les logs, retrouvez :
-   - le test qui échoue ;
-   - le message d'erreur ;
-   - la ligne exacte du fichier.
+    - le test qui échoue ;
+    - le message d'erreur ;
+    - la ligne exacte du fichier.
 4. Corrigez, poussez : retour au vert.
 
 > 📸 **TP1-3 :** le run rouge, avec l'étape `pytest` dépliée et le message d'erreur lisible.
