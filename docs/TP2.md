@@ -11,10 +11,10 @@ cache, protection de la branche `main`, travail à deux sur un même dépôt et 
 
 ## Avant de commencer
 
-- [ ] Votre TP1 est terminé : `ci.yml` fonctionne et `main` est à jour (`git switch main && git pull`)
-- [ ] Environnement `.venv` activé, puis `pip install -r requirements-dev.txt` (ajoute `black`)
-- [ ] Travaillez sur une branche : `git switch -c tp2`
-- [ ] Vous avez un **binôme** pour la partie 4 (sinon, voir « Si vous êtes seul »)
+- [x] Votre TP1 est terminé : `ci.yml` fonctionne et `main` est à jour (`git switch main && git pull`)
+- [x] Environnement `.venv` activé, puis `pip install -r requirements-dev.txt` (ajoute `black`)
+- [x] Travaillez sur une branche : `git switch -c tp2`
+- [x] Vous avez un **binôme** pour la partie 4 (sinon, voir « Si vous êtes seul »)
 
 ---
 
@@ -53,7 +53,7 @@ cache, protection de la branche `main`, travail à deux sur un même dépôt et 
 ## Partie 3 : Protéger la branche main (15 min)
 
 1. Sur GitHub : **Settings → Branches** (ou **Rules → Rulesets**) → créez une règle pour la branche `main`.
-2. Cochez : *Require a pull request before merging* et *Require status checks to pass before merging*.
+2. Cochez : _Require a pull request before merging_ et _Require status checks to pass before merging_.
 3. Choisissez comme vérifications obligatoires : `lint` et `test (3.12)`.
    (Un contrôle n'apparaît dans la liste que s'il a tourné récemment : lancez la CI avant.)
 4. Ouvrez une PR depuis `tp2` qui fait échouer volontairement un test, et constatez que la fusion est **bloquée**.
@@ -74,7 +74,7 @@ cache, protection de la branche `main`, travail à deux sur un même dépôt et 
 1. A et B partent **tous les deux** de `main` à jour et créent chacun une branche (`entree-a`, `entree-b`).
 2. Chacun ajoute **une ligne différente** sous « Non publié » dans `CHANGELOG.md`, au **même endroit** (juste sous la première ligne).
 3. Chacun pousse sa branche et ouvre une pull request vers `main`.
-4. **A fusionne** sa PR (CI verte). La PR de B affiche maintenant : *This branch has conflicts*.
+4. **A fusionne** sa PR (CI verte). La PR de B affiche maintenant : _This branch has conflicts_.
 5. **B résout le conflit** dans son terminal :
 
 ```bash
@@ -102,11 +102,11 @@ git push
 1. Sur GitHub : **Settings → Secrets and variables → Actions** : créez un **secret** `DEMO_TOKEN` (valeur de votre choix, par exemple `abc123`).
    Dans l'onglet **Variables**, créez une variable `APP_ENV` = `staging`.
 2. Créez `.github/workflows/secret-demo.yml`, déclenché **à la demande** (`workflow_dispatch`), avec un job qui :
-   - lit le secret via `${{ secrets.DEMO_TOKEN }}` placé dans une variable d'environnement ;
-   - échoue (`exit 1`) s'il est vide ;
-   - affiche la longueur du secret (`${#DEMO_TOKEN}`) ;
-   - essaie d'afficher sa valeur avec `echo` ;
-   - affiche la variable `${{ vars.APP_ENV }}`.
+    - lit le secret via `${{ secrets.DEMO_TOKEN }}` placé dans une variable d'environnement ;
+    - échoue (`exit 1`) s'il est vide ;
+    - affiche la longueur du secret (`${#DEMO_TOKEN}`) ;
+    - essaie d'afficher sa valeur avec `echo` ;
+    - affiche la variable `${{ vars.APP_ENV }}`.
 3. Lancez le workflow depuis l'onglet Actions (**Run workflow**) et ouvrez les logs.
 
 > 📸 **TP2-9 :** les logs où la valeur du secret apparaît masquée par `***`.
