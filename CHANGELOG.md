@@ -1,5 +1,4 @@
 # Journal des changements
-oui
 
 ## Non publié
 
