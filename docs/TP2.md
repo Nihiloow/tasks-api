@@ -129,9 +129,9 @@ Dans le dossier `pipelines-a-reparer/` : trois workflows (A, B, C) avec **un bug
 
 ## Checklist de fin de TP
 
-- [ ] `ci.yml` : jobs `lint` et `test` (matrix, cache, couverture ≥ 80 %, artefact)
-- [ ] `main` protégée : PR et vérifications obligatoires
-- [ ] Conflit résolu dans une PR croisée
-- [ ] Secret utilisé sans jamais être affiché
-- [ ] Les trois pipelines A, B, C sont réparés
-- [ ] Mes 11 captures et mes réponses sont dans le dossier
+- [x] `ci.yml` : jobs `lint` et `test` (matrix, cache, couverture ≥ 80 %, artefact)
+- [x] `main` protégée : PR et vérifications obligatoires
+- [x] Conflit résolu dans une PR croisée
+- [x] Secret utilisé sans jamais être affiché
+- [x] Les trois pipelines A, B, C sont réparés
+- [x] Mes 11 captures et mes réponses sont dans le dossier
