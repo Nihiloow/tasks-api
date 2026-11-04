@@ -13,7 +13,7 @@ créer une version (release) par un tag Git, et déployer avec une approbation a
 
 - [x] **Docker Desktop est lancé** (icône verte). Test : `docker run --rm hello-world`
 - [x] `main` à jour : `git switch main && git pull`, puis `git switch -c tp3`
-- [ ] Le TP2 est terminé (CI avec `lint` et `test`)
+- [x] Le TP2 est terminé (CI avec `lint` et `test`)
 
 ### Les commandes qui changent selon votre système
 
