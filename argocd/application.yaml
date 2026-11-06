@@ -4,20 +4,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tasks-api
-  namespace: argocd
+    name: tasks-api
+    namespace: argocd
 spec:
-  project: default
-  source:
-    repoURL: https://github.com/<votre-compte-github>/tasks-config.git
-    targetRevision: main
-    path: k8s
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: tasks
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+    project: default
+    source:
+        repoURL: https://github.com/nihiloow/tasks-config.git
+        targetRevision: main
+        path: k8s
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: tasks
+    syncPolicy:
+        automated:
+            prune: true
+            selfHeal: true
+        syncOptions:
+            - CreateNamespace=true
